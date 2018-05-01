@@ -21,7 +21,29 @@ body
 				li.item
 					a(href="#") Dibujo y Animación
 	section.Hero
-		h1.title!= "Aloja tus sitios <strong>con una empresa <span>confiable</span></strong>"
-		p.descripcion Conía en una empresa de tu localidad y con quien puedas tomar un cafe
+		.contenedor
+			h1.title!= "Aloja tus sitios <strong>con una empresa <span>confiable</span></strong>"
+			p.descripcion Conía en una empresa de tu localidad y con quien puedas tomar un cafe
 
-		a.btn(href="#") Empieza Ahora
+			a.btn(href="#") Empieza Ahora
+
+	section.Servicios
+		.contenedor
+			h1.title Que Ofrecemos
+			p.descripcion Escoge un plan Hosting y enlazalo a tu dominio
+			.contenedor
+				.item
+					h3.title Gravedad Basico
+					span.precio!= "Empieza con <span>18$</span> / año"
+					p.descripcion Es el mejor plan que podras obtener. Con 500 MB en disco. 5 GB ancho de banda. 25 cuentas de correo y mas.
+					a.btn(href="#") Ver el plan
+				.item
+					h3.title Gravedad personal
+					span.precio!= "Empieza con <span>18$</span> / año"
+					p.descripcion Si buscal al mejor, este es tu plan. Con 1 GB de espacio. 10 GB ancho de banda. 50 cuentas de correo, y pare de contar.
+					a.btn(href="#") Ver el plan
+				.item
+					h3.title Gravedad Plus
+					span.precio!= "Empieza con <span>18$</span> / año"
+					p.descripcion Más siempre es bueno. Con 2 GB en disco. 20 GB ancho de banda 25 cuentas de correo y más.
+					a.btn(href="#") Ver el plan
