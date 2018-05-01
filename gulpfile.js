@@ -46,11 +46,11 @@ gulp.task('css', ()=>{
 gulp.task('watch', ()=>{
 	gulp.watch('./src/postcss/*.css', ['css'])
   gulp.watch('./*.html').on('change', browserSync.reload)
-  gulp.watch('./jade/*.pug', ['pug'])
+  gulp.watch('./src/jade/*.pug', ['pug'])
 	gulp.watch('./js/*.js').on('change', browserSync.reload)
 })
 gulp.task('pug', ()=>{
-  gulp.src('./jade/*.pug')
+  gulp.src('./src/jade/*.pug')
   .pipe(pug({
     pretty: false
   }))
