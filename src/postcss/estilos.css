@@ -6,7 +6,7 @@
 	--amarillo: #f59103;
 	--rosa: #d0615f;
 	--background: #2f2f2f;
-	
+
 	--colorTexto: #666666;
 	--hover: #3f3f3f;
 	--btn: {
@@ -98,6 +98,66 @@ body{
 			transition: .3s;
 			&:hover{
 				background: var(--background);
+			}
+		}
+	}
+}
+.Precios{
+	background: var(--background);
+	padding: 5em 8em;
+	& .contenedor{
+		text-align: center;
+		& .title{
+			@apply --title;
+		}
+		& > .descripcion{
+			@apply --text;
+			color: var(--colorTexto);
+			margin-bottom: 5em;
+		}
+		& .contenedor{
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 50px;
+			& .item{
+				background: var(--colorTexto);
+				padding: 1em 2em 2em;
+				display: grid;
+				justify-items: center;
+				transition: .3s;
+				& .title{
+					font-size: 1.3rem;
+				}
+				& .precio{
+					color: #c5c5c5;
+					border-bottom: 1px solid #c5c5c5;
+					width: 100%;
+					padding-bottom: 1em;
+					& span{
+						color: var(--amarillo);
+					}
+				}
+				& .descripcion{
+					color: #c5c5c5;
+				}
+				& .btn{
+					@apply --btn;
+					padding: .8em 2em;
+					width: 50%;
+				}
+				&:nth-of-type(2){
+					& .btn{
+						background: var(--amarillo);
+					}
+				}
+				&:nth-of-type(3){
+					& .btn{
+						background: var(--rosa);
+					}
+				}
+				&:hover{
+					background: var(--hover);
+				}
 			}
 		}
 	}
