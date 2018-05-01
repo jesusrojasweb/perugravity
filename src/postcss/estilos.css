@@ -41,7 +41,9 @@ body{
 	font-family: 'Montserrat', system-ui;
 	overflow-x: hidden;
 }
-
+ul{
+	padding-left: 0;
+}
 .Peru{
 	background: #475057;
 	display: flex;
@@ -282,6 +284,65 @@ body{
 				& img{
 					height: 100%;
 				}
+			}
+		}
+	}
+}
+.Footer{
+	background: var(--background);
+	& .informacion{
+		padding: 3em 7em;
+		& .contenedor{
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			width: 50%;
+			& .title{
+				margin: 0;
+				@apply --title;
+				font-size: 1.2rem;
+			}
+			& .item {
+
+				& .menu{
+					list-style: none;
+					& .item{
+						line-height: 2.5rem;
+						& a{
+							color: var(--colorTexto);
+							text-decoration: none;
+							transition: .3s;
+							&:hover{
+								color: white;
+							}
+						}
+					}
+				}
+				&:nth-of-type(2){
+					& .menu{
+						display: flex;
+						& li{
+							& a{
+								padding-right: 1.5em;
+								font-size: 1.5rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	& .derechos{
+		background: black;
+		padding: 1em;
+		color: var(--colorTexto);
+		display: flex;
+		justify-content: space-around;
+		& a{
+			color: var(--azul);
+			text-decoration: none;
+			transition: .3s;
+			&:hover{
+				color: white;
 			}
 		}
 	}
