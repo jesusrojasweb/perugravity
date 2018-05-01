@@ -21,7 +21,7 @@ gulp.task('css', ()=>{
     fontMagician({
       variants: {
           'Lato': {
-            '500': [],
+            '400': [],
             '700': []
           },
           'Montserrat': {
