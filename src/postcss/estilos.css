@@ -39,6 +39,7 @@ body{
 	padding: 0;
 	font-family: 'Lato', system-ui;
 	font-family: 'Montserrat', system-ui;
+	overflow-x: hidden;
 }
 
 .Peru{
@@ -200,6 +201,47 @@ body{
 					width: 100%;
 					filter: brightness(0.5);
 				}
+			}
+		}
+	}
+}
+.Portafolio{
+	text-align: center;
+	padding: 4em 0;
+	& .title{
+		@apply --title;
+		color: var(--colorTexto);
+		margin-bottom: 2em;
+	}
+	& .menu{
+		display: flex;
+		justify-content: center;
+		list-style: none;
+		margin-bottom: 4em;
+		& li{
+			& a{
+				color: var(--colorTexto);
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 600;
+				padding: 2em;
+				transition: .3s;
+				&:hover{
+					color: #2f2f2f;
+				}
+			}
+		}
+	}
+	& .contenedor{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		& img{
+			width: 100%;
+		}
+		& .item{
+			transition: .3s;
+			&:hover{
+				transform: scale(1.1);
 			}
 		}
 	}
