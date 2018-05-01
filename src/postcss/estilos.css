@@ -1,0 +1,104 @@
+:root{
+	--fuenteP: 'Lato', system-ui;
+	--fuenteS: 'Montserrat', system-ui;
+
+	--azul: #0b6a99;
+	--amarillo: #f59103;
+	--rosa: #d0615f;
+	--background: #2f2f2f;
+	
+	--colorTexto: #666666;
+	--hover: #3f3f3f;
+	--btn: {
+		background: var(--azul);
+		font-family: var(--fuenteS);
+		color: white;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 1em 2.5em;
+		font-weight: 600;
+	};
+	--title: {
+		font-family: var(--fuenteP);
+		color: white;
+		text-transform: uppercase;
+		font-size: 1.8rem;
+	};
+	--text: {
+		font-family: var(--fuenteS);
+		color: white;
+	};
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Lato', system-ui;
+	font-family: 'Montserrat', system-ui;
+}
+
+.Peru{
+	background: #475057;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: .5em 1em 2em;
+	& .logo{
+		margin: 0;
+		& .img{
+			width: 60%;
+		}
+	}
+	& .navbar{
+		& .menu{
+			margin: 0;
+			display: flex;
+			list-style: none;
+			margin-top: 3em;
+			& .item{
+				& a{
+					@apply --btn;
+					padding: 2.5em;
+					transition: .3s;
+					&:hover{
+						background: var(--background);
+					}
+				}
+			}
+		}
+	}
+}
+.Hero{
+	background: url('../img/bg.jpg') no-repeat center center;
+	background-size: cover;
+	padding: 7em 5em;
+	& .contenedor{
+		width: 50%;
+		& h2{
+			margin: 0;
+			@apply --title;
+			font-weight: 400 !important;
+			font-size: 1.8rem;
+			margin-bottom: 1em;
+			& strong{
+				font-size: 2rem;
+				& span{
+					font-size: 2.2rem;
+				}
+			}
+		}
+		& .descripcion{
+			@apply --text;
+			font-size: 1.3rem;
+			margin-bottom: 3em;
+		}
+		& .btn{
+			@apply --btn;
+			transition: .3s;
+			&:hover{
+				background: var(--background);
+			}
+		}
+	}
+}
