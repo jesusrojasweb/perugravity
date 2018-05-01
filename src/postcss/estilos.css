@@ -246,3 +246,43 @@ body{
 		}
 	}
 }
+.Testimonios{
+	background: url('../img/testimonios.jpg') no-repeat center center;
+	background-size: cover;
+	& .contenedor{
+		background: color(black a(50%));
+		text-align: center;
+		padding: 5em 8em;
+		& .title{
+			@apply --title;
+			margin-bottom: 2em;
+		}
+		& .testimonio{
+			@apply --text;
+			font-size: 1.4rem;
+		}
+		& .nombre{
+			font-family: var(--fuenteP);
+			text-transform: uppercase;
+			color: white;
+			font-weight: bold;
+			font-size: 1.2rem;
+		}
+		& .personas{
+			display: flex;
+			justify-content: center;
+			& li{
+				width: 80px;
+				height: 80px;
+				list-style: none;
+				border-radius: 50%;
+				overflow: hidden;
+				margin: 1em;
+				box-shadow: 4px 4px 20px 0px white;
+				& img{
+					height: 100%;
+				}
+			}
+		}
+	}
+}
