@@ -33,7 +33,8 @@
 		color: white;
 	};
 }
-
+@custom-media --tablet (width <= 768px);
+@custom-media --mobile (width <= 500px);
 body{
 	margin: 0;
 	padding: 0;
@@ -44,6 +45,7 @@ body{
 ul{
 	padding-left: 0;
 }
+
 .Peru{
 	background: #475057;
 	display: flex;
@@ -51,6 +53,9 @@ ul{
 	align-items: center;
 	text-align: center;
 	padding: .5em 1em 2em;
+	@media (--tablet){
+		padding: .5em 0 2em;
+	}
 	& .logo{
 		margin: 0;
 		& .img{
@@ -58,6 +63,26 @@ ul{
 		}
 	}
 	& .navbar{
+		position: relative;
+		@media (--mobile){
+			width: 100%;
+			padding-bottom: 1em;
+			& .btn{
+				display: block;
+				background: none;
+				border: none;
+				color: white;
+				font-size: 2rem;
+				position: absolute;
+				right: 2em;
+			}
+			& .menu{
+				display: none;
+			}
+		}
+		& .btn{
+			display: none;
+		}
 		& .menu{
 			margin: 0;
 			display: flex;
@@ -68,6 +93,9 @@ ul{
 					@apply --btn;
 					padding: 2.5em;
 					transition: .3s;
+					@media (--tablet){
+						padding: 1.5em 1em;	
+					}
 					&:hover{
 						background: var(--background);
 					}
@@ -79,9 +107,19 @@ ul{
 .Hero{
 	background: url('../img/bg.jpg') no-repeat center center;
 	background-size: cover;
-	padding: 7em 5em;
+	@media (--tablet){
+
+		padding: 5em 2em;
+	}
 	& .contenedor{
 		width: 50%;
+		@media (--tablet){
+			width: 80%;	
+		}
+		@media (--mobile){
+			width: 100%;	
+			text-align: center;
+		}
 		& h2{
 			margin: 0;
 			@apply --title;
@@ -111,7 +149,9 @@ ul{
 }
 .Precios{
 	background: var(--background);
-	padding: 5em 8em;
+	@media (--mobile){
+		padding: 5em 2em;
+	}
 	& .contenedor{
 		text-align: center;
 		& .title{
@@ -126,6 +166,10 @@ ul{
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			grid-gap: 50px;
+			@media (--tablet){
+				grid-template-columns: 1fr;				
+			}
+
 			& .item{
 				background: var(--colorTexto);
 				padding: 1em 2em 2em;
@@ -176,6 +220,10 @@ ul{
 	& .container{
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+
+		@media (--tablet){
+			grid-template-columns: 1fr;				
+		}
 		& .item{
 			background: #f3f3f3;
 			text-align: center;
@@ -220,6 +268,9 @@ ul{
 		justify-content: center;
 		list-style: none;
 		margin-bottom: 4em;
+		@media (--mobile){
+			overflow-x: scroll;
+		}
 		& li{
 			& a{
 				color: var(--colorTexto);
@@ -228,6 +279,9 @@ ul{
 				font-weight: 600;
 				padding: 2em;
 				transition: .3s;
+				@media (--mobile){
+					padding: 1em;
+				}
 				&:hover{
 					color: #2f2f2f;
 				}
@@ -237,6 +291,12 @@ ul{
 	& .contenedor{
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+		@media (--tablet){
+			grid-template-columns: 1fr 1fr;
+		}
+		@media (--mobile){
+			grid-template-columns: 1fr;
+		}
 		& img{
 			width: 100%;
 		}
@@ -255,6 +315,9 @@ ul{
 		background: color(black a(50%));
 		text-align: center;
 		padding: 5em 8em;
+		@media (--mobile){
+			padding: 5em 2em;
+		}
 		& .title{
 			@apply --title;
 			margin-bottom: 2em;
@@ -281,6 +344,10 @@ ul{
 				overflow: hidden;
 				margin: 1em;
 				box-shadow: 4px 4px 20px 0px white;
+				@media (--mobile){
+					width: 50px;
+					height: 50px;
+				}
 				& img{
 					height: 100%;
 				}
@@ -296,6 +363,12 @@ ul{
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			width: 50%;
+			@media (--tablet){
+				width: 100%;
+			}
+			@media (--tablet){
+				grid-template-columns: 1fr;
+			}
 			& .title{
 				margin: 0;
 				@apply --title;
@@ -337,6 +410,12 @@ ul{
 		color: var(--colorTexto);
 		display: flex;
 		justify-content: space-around;
+		@media (--mobile){
+			flex-direction: column;
+			& span{
+				margin-bottom: 2em;
+			}
+		}
 		& a{
 			color: var(--azul);
 			text-decoration: none;
