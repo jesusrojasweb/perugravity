@@ -107,8 +107,8 @@ ul{
 .Hero{
 	background: url('../img/bg.jpg') no-repeat center center;
 	background-size: cover;
+	padding: 5em 7em;
 	@media (--tablet){
-
 		padding: 5em 2em;
 	}
 	& .contenedor{
@@ -149,6 +149,7 @@ ul{
 }
 .Precios{
 	background: var(--background);
+	padding: 5em 7em;
 	@media (--mobile){
 		padding: 5em 2em;
 	}
