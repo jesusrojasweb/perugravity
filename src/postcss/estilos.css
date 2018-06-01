@@ -288,6 +288,16 @@ ul{
 		& .item{
 			background: #f3f3f3;
 			text-align: center;
+			position: relative;
+			& .circulo{
+				width: 20%;
+			    height: 100%;
+			    background: #f3f3f3;
+			    position: absolute;
+			    z-index: 1;
+			    border-radius: 72%;
+			    right: -65px;
+			}
 			& .title{
 				@apply --title;
 				color: var(--colorTexto);
