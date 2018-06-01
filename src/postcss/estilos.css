@@ -79,6 +79,7 @@ ul{
 				font-size: 2rem;
 				position: absolute;
 				right: 2em;
+
 			}
 			& .menu{
 				display: none;
@@ -102,6 +103,7 @@ ul{
 					padding: 2.5em;
 					padding-top: 0 !important;;
 					transition: .3s;
+					border-radius: 0;
 					@media (--tablet){
 						padding: 1.5em 1em;	
 					}
@@ -332,6 +334,7 @@ ul{
 .Portafolio{
 	text-align: center;
 	padding: 4em 0;
+	background: #f3f3f3;
 	& .title{
 		@apply --title;
 		color: var(--colorTexto);
@@ -365,6 +368,8 @@ ul{
 	& .contenedor{
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 2em;
+		padding: 0 2em;
 		@media (--tablet){
 			grid-template-columns: 1fr 1fr;
 		}
@@ -376,8 +381,39 @@ ul{
 		}
 		& .item{
 			transition: .3s;
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			overflow: hidden;
+			border-radius: 15px;
+			& .overlay{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				right: 0;
+				background: color(black a(50%));
+				display: flex;
+				flex-direction: column;
+				color: white;
+				justify-content: space-around;
+				padding: 3em 0;
+				box-sizing: border-box;
+				opacity: 0;
+				transition: .3s;
+			}
+			& .img{
+				transition: .3s;
+			}
 			&:hover{
-				transform: scale(1.1);
+				& .overlay{
+					opacity: 1;
+					z-index: 2;
+				}
+				& .img{
+					z-index: 1;
+					transform: scale(1.1);
+				}
 			}
 		}
 	}
