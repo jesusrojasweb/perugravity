@@ -18,8 +18,11 @@
 		padding: 1em 2.5em;
 		font-weight: 600;
 		transition: .3s;
+		border-radius: 15px;
+		box-shadow: 0px 5px 0px color(var(--azul) blackness(70%));
 		&:hover{
-			background: var(--background);
+			background: color(var(--azul) blackness(70%));
+			box-shadow: 0px 5px 0px color(var(--azul) blackness(80%));
 		}
 	};
 	--title: {
@@ -47,7 +50,7 @@ ul{
 }
 
 .Peru{
-	background: #475057;
+	background: white;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -59,11 +62,12 @@ ul{
 	& .logo{
 		margin: 0;
 		& .img{
-			width: 60%;
+			width: 50%;
 		}
 	}
 	& .navbar{
 		position: relative;
+		margin-top: -2em;
 		@media (--mobile){
 			width: 100%;
 			padding-bottom: 1em;
@@ -75,6 +79,7 @@ ul{
 				font-size: 2rem;
 				position: absolute;
 				right: 2em;
+
 			}
 			& .menu{
 				display: none;
@@ -88,16 +93,23 @@ ul{
 			display: flex;
 			list-style: none;
 			margin-top: 3em;
+			background: none;
 			& .item{
 				& a{
 					@apply --btn;
+					color: var(--colorTexto);
+					background: none !important;
+					background: white;
 					padding: 2.5em;
+					padding-top: 0 !important;;
 					transition: .3s;
+					border-radius: 0;
 					@media (--tablet){
 						padding: 1.5em 1em;	
 					}
 					&:hover{
-						background: var(--background);
+						color: var(--background);
+						background: none;
 					}
 				}
 			}
@@ -107,12 +119,19 @@ ul{
 .Hero{
 	background: url('../img/bg.jpg') no-repeat center center;
 	background-size: cover;
-	padding: 5em 7em;
+	position: relative;
 	@media (--tablet){
 		padding: 5em 2em;
 	}
+	& .bg{
+		padding: 10em 7em 7em;
+		background: color(black a(50%));
+		width: 100%;
+		height: 100%;
+	}
 	& .contenedor{
-		width: 50%;
+		width: 40%;
+		z-index: 5;
 		@media (--tablet){
 			width: 80%;	
 		}
@@ -141,8 +160,51 @@ ul{
 		& .btn{
 			@apply --btn;
 			transition: .3s;
-			&:hover{
-				background: var(--background);
+		}
+	}
+}
+.Servicios{
+	text-align: center;
+	padding: 4em 4em 7em 4em;
+	& > .title{
+		color: var(--background);
+		text-transform: uppercase;
+		font-size: 2rem;
+		margin-top: 0;
+	}
+	& .contenedor{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		margin-top: 4em;
+		& .item{
+			& .icono{
+				background: var(--azul);
+				color: white;
+				font-size: 3.5rem;
+				padding: .3em;
+				border-radius: 50%;
+				margin-bottom: .5em;
+			}
+			& .title{
+				color: var(--background);
+				text-transform: uppercase;
+				font-weight: bold;
+				margin-bottom: 1em;
+			}
+			& .descripcion{
+				color: var(--colorTexto);
+			}
+		}
+		& .item:nth-of-type(2){
+			& .icono{
+
+				background: var(--rosa);
+			}
+		}
+		& .item:nth-of-type(3){
+			& .icono{
+
+				background: var(--amarillo);
 			}
 		}
 	}
@@ -177,6 +239,7 @@ ul{
 				display: grid;
 				justify-items: center;
 				transition: .3s;
+				border-radius: 5px;
 				& .title{
 					font-size: 1.3rem;
 				}
@@ -194,8 +257,8 @@ ul{
 				}
 				& .btn{
 					@apply --btn;
-					padding: .8em 2em;
 					width: 50%;
+					box-shadow: 0px 6px 0px color(var(--azul) blackness(70%));
 					&:hover{
 						background: var(--azul);
 					}
@@ -203,11 +266,13 @@ ul{
 				&:nth-of-type(2){
 					& .btn{
 						background: var(--amarillo);
+						box-shadow: 0px 6px 0px color(var(--amarillo) blackness(50%));
 					}
 				}
 				&:nth-of-type(3){
 					& .btn{
 						background: var(--rosa);
+						box-shadow: 0px 6px 0px color(var(--rosa) blackness(35%));
 					}
 				}
 				&:hover{
@@ -228,6 +293,16 @@ ul{
 		& .item{
 			background: #f3f3f3;
 			text-align: center;
+			position: relative;
+			& .circulo{
+				width: 20%;
+			    height: 100%;
+			    background: #f3f3f3;
+			    position: absolute;
+			    z-index: 1;
+			    border-radius: 72%;
+			    right: -65px;
+			}
 			& .title{
 				@apply --title;
 				color: var(--colorTexto);
@@ -259,6 +334,7 @@ ul{
 .Portafolio{
 	text-align: center;
 	padding: 4em 0;
+	background: #f3f3f3;
 	& .title{
 		@apply --title;
 		color: var(--colorTexto);
@@ -292,6 +368,8 @@ ul{
 	& .contenedor{
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 2em;
+		padding: 0 2em;
 		@media (--tablet){
 			grid-template-columns: 1fr 1fr;
 		}
@@ -303,8 +381,39 @@ ul{
 		}
 		& .item{
 			transition: .3s;
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			overflow: hidden;
+			border-radius: 15px;
+			& .overlay{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				right: 0;
+				background: color(black a(50%));
+				display: flex;
+				flex-direction: column;
+				color: white;
+				justify-content: space-around;
+				padding: 3em 0;
+				box-sizing: border-box;
+				opacity: 0;
+				transition: .3s;
+			}
+			& .img{
+				transition: .3s;
+			}
 			&:hover{
-				transform: scale(1.1);
+				& .overlay{
+					opacity: 1;
+					z-index: 2;
+				}
+				& .img{
+					z-index: 1;
+					transform: scale(1.1);
+				}
 			}
 		}
 	}
