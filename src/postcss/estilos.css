@@ -108,6 +108,7 @@ ul{
 					padding-top: 0 !important;;
 					transition: .3s;
 					border-radius: 0;
+					box-shadow: none;
 					@media (--tablet){
 						padding: 1.5em 1em;
 						box-shadow: none;
