@@ -73,12 +73,16 @@ ul{
 			padding-bottom: 1em;
 			& .btn{
 				display: block;
-				background: none;
 				border: none;
+				background: var(--background);
+				border-radius: 50%;
 				color: white;
 				font-size: 2rem;
-				position: absolute;
-				right: 2em;
+				position: fixed;
+				z-index: 1000;
+				right: 1em;
+				padding: .4em .5em;
+
 
 			}
 			& .menu{
@@ -105,7 +109,8 @@ ul{
 					transition: .3s;
 					border-radius: 0;
 					@media (--tablet){
-						padding: 1.5em 1em;	
+						padding: 1.5em 1em;
+						box-shadow: none;
 					}
 					&:hover{
 						color: var(--background);
@@ -120,14 +125,17 @@ ul{
 	background: url('../img/bg.jpg') no-repeat center center;
 	background-size: cover;
 	position: relative;
-	@media (--tablet){
-		padding: 5em 2em;
-	}
 	& .bg{
 		padding: 10em 7em 7em;
 		background: color(black a(50%));
 		width: 100%;
 		height: 100%;
+		@media (--tablet){
+			padding: 5em 2em;
+		}
+		@media (--mobile){
+			width: inherit;
+		}
 	}
 	& .contenedor{
 		width: 40%;
@@ -176,7 +184,14 @@ ul{
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		margin-top: 4em;
+		@media(--mobile){
+			grid-gap: 2em;
+		}
+		@media(--mobile){
+			grid-template-columns: 1fr;
+		}
 		& .item{
+
 			& .icono{
 				background: var(--azul);
 				color: white;
