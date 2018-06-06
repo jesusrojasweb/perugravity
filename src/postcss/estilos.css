@@ -317,6 +317,10 @@ ul{
 			    z-index: 1;
 			    border-radius: 72%;
 			    right: -65px;
+			    @media(--tablet){
+			    	display: none;
+			    }
+
 			}
 			& .title{
 				@apply --title;
